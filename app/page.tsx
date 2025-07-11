@@ -367,14 +367,14 @@ const handleSubmit = async (e: React.FormEvent) => {
                   Explore Our Services
                   <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
-                <Button
+                {/* <Button
                   size="lg"
                   variant="outline"
                   onClick={() => scrollToSection("#about")}
                   className="border-white/30 text-white hover:bg-white/10 bg-white/5 backdrop-blur-md transform hover:scale-105 transition-all duration-300 hover:border-white/50 text-lg px-8 py-4"
                 >
                   Learn More About Us
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
@@ -577,14 +577,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       </ul>
                     </div>
 
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full mt-4 border-teal-200 text-teal-600 hover:bg-teal-50 group-hover:border-teal-300 transition-all duration-300 bg-transparent"
-                    >
-                      Learn More
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Button>
+                 
                   </CardContent>
                 </Card>
               </div>
@@ -942,7 +935,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <div className="flex items-center justify-center space-x-4 mb-4">
             <div className="transform hover:scale-110 transition-transform duration-300">
               <img
-                src="/rajsme-logo-transparent.png"
+                src="/logoMe.png"
                 alt="RAJSME Logo"
                 className="h-8 w-auto"
               />
