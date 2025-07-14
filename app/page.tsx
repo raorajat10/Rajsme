@@ -82,7 +82,7 @@ export default function HomePage() {
       icon: Globe,
       title: "Facilitate Market Linkages",
       description:
-        "Enable MSMEs to access local and global markets via fairs, B2B/B2C shows, e-commerce, and export facilitation.",
+        "Enable SMEs to access local and global markets via fairs, B2B/B2C shows, e-commerce, and export facilitation.",
       image: "/msme-support.jpg",
     },
     {
@@ -250,7 +250,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 <img
                   src="/logoMe.png"
                   alt="RAJSME Logo"
-                  className="h-12 w-auto"
+                  className="h-20 w-auto"
                 />
               </div>
             </div>
@@ -333,24 +333,24 @@ const handleSubmit = async (e: React.FormEvent) => {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-200">
-              <Badge className="mb-6 bg-white/20 backdrop-blur-md text-white border-white/30 hover:scale-105 transition-transform duration-300">
+            {/* <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-200">
+              {/* <Badge className="mb-6 bg-white/20 backdrop-blur-md text-white border-white/30 hover:scale-105 transition-transform duration-300">
                 Section 8 Company | CIN: U88100RJ2023NPL087092
-              </Badge>
-            </div>
+              </Badge> 
+            </div> */}
 
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-400">
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+              <h1 className="text-4xl md:text-8xl  font-bold text-white mb-6 leading-tight drop-shadow-2xl">
                 Empowering India's
                 <span className="bg-gradient-to-r from-teal-400 to-orange-400 bg-clip-text text-transparent animate-pulse">
                   {" "}
-                  MSMEs
+                  SMEs
                 </span>
               </h1>
             </div>
 
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-600">
-              <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
+              <p className="text-sm md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
                 Fostering innovation, sustainable practices, and market access
                 for cottage industries to achieve global competitiveness through
                 comprehensive support and strategic partnerships.
@@ -360,9 +360,9 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-800">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  size="lg"
+                  size="sm"
                   onClick={() => scrollToSection("#services")}
-                  className="bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl text-lg px-8 py-4"
+                  className="bg-gradient-to-r md:text-xl from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl text-lg px-8 py-4"
                 >
                   Explore Our Services
                   <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
@@ -402,7 +402,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
                 About RAJSME
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
@@ -413,13 +413,13 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div className="animate-in fade-in-50 slide-in-from-left-4 duration-700 delay-200">
               <Card className="border-0 shadow-2xl bg-white/80 backdrop-blur-md hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2">
                 <CardContent className="p-8">
-                  <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                  <p className="text-xs md:text-lg text-slate-700 leading-relaxed mb-6">
                     RAJSME Enterprises Association is a Section 8 company
                     incorporated under the Companies Act, 2013, dedicated to
-                    empowering India's Micro, Small & Medium Enterprises (MSMEs)
+                    empowering India's  Small & Medium Enterprises (SMEs)
                     and cottage industries.
                   </p>
-                  <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                  <p className="text-xs md:text-lg text-slate-700 leading-relaxed mb-6">
                     We serve as a bridge between traditional businesses and
                     modern market opportunities, providing comprehensive support
                     for sustainable growth and global competitiveness.
@@ -429,8 +429,8 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <Shield className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold">Trusted by 1000+ MSMEs</p>
-                      <p className="text-sm text-slate-600">Across India</p>
+                      <p className="font-semibold text-xs md:text-lg">Trusted by 1000+ SMEs</p>
+                      <p className="text-xs md:text-lg text-slate-600">Across India</p>
                     </div>
                   </div>
                 </CardContent>
@@ -465,7 +465,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
                 Our Vision
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-orange-400 mx-auto mb-6 animate-pulse"></div>
@@ -474,8 +474,8 @@ const handleSubmit = async (e: React.FormEvent) => {
           <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-200">
             <Card className="max-w-5xl mx-auto border-0 shadow-2xl bg-white/10 backdrop-blur-lg hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2">
               <CardContent className="p-12">
-                <p className="text-2xl text-white leading-relaxed text-center font-light">
-                  Empowering India's MSMEs and cottage industries to achieve
+                <p className="text-xs md:text-lg text-white leading-relaxed text-center font-light">
+                  Empowering India's SMEs and cottage industries to achieve
                   global competitiveness through innovation, sustainable
                   practices, and market access.
                 </p>
@@ -485,13 +485,13 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <div className="w-16 h-16 bg-gradient-to-r from-teal-400 to-orange-400 rounded-full flex items-center justify-center mb-2 mx-auto">
                         <Globe className="w-8 h-8 text-white" />
                       </div>
-                      <p className="text-white/80 text-sm">Global Reach</p>
+                      <p className="text-white/80 text-xs  md:text-sm">Global Reach</p>
                     </div>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-gradient-to-r from-teal-400 to-orange-400 rounded-full flex items-center justify-center mb-2 mx-auto">
                         <TrendingUp className="w-8 h-8 text-white" />
                       </div>
-                      <p className="text-white/80 text-sm">
+                      <p className="text-white/80 text-xs  md:text-sm">
                         Sustainable Growth
                       </p>
                     </div>
@@ -499,7 +499,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <div className="w-16 h-16 bg-gradient-to-r from-teal-400 to-orange-400 rounded-full flex items-center justify-center mb-2 mx-auto">
                         <Users className="w-8 h-8 text-white" />
                       </div>
-                      <p className="text-white/80 text-sm">Community Support</p>
+                      <p className="text-white/80 text-xs  md:text-sm">Community Support</p>
                     </div>
                   </div>
                 </div>
@@ -523,13 +523,12 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
                 Our Services
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                Comprehensive solutions designed to support MSMEs at every stage
-                of their growth journey
+              <p className=" text-sm md:text-xl text-slate-600 max-w-3xl mx-auto">
+                Comprehensive solutions designed to support Small & Medium Enterprises at every stage of their growth journey.
               </p>
             </div>
           </div>
@@ -550,7 +549,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     >
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
-                    <CardTitle className="text-xl font-semibold text-slate-800 group-hover:text-teal-600 transition-colors duration-300">
+                    <CardTitle className="text-sm md:text-xl font-semibold text-slate-800 group-hover:text-teal-600 transition-colors duration-300">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
@@ -568,7 +567,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         {service.features.map((feature, featureIndex) => (
                           <li
                             key={featureIndex}
-                            className="flex items-center text-sm text-slate-600"
+                            className="flex items-center text-xs md:text-sm text-slate-600"
                           >
                             <CheckCircle className="w-4 h-4 text-teal-500 mr-2 flex-shrink-0" />
                             {feature}
@@ -589,18 +588,18 @@ const handleSubmit = async (e: React.FormEvent) => {
             <Card className="max-w-4xl mx-auto border-0 shadow-xl bg-gradient-to-r from-teal-500 to-orange-500 text-white">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-4">
-                  Ready to Transform Your Business?
+                  Join Us to Transform Your Business
                 </h3>
-                <p className="text-lg mb-6 text-white/90">
-                  Join thousands of MSMEs who have already benefited from our
+                {/* <p className="text-sm md:text-lg mb-6 text-white/90">
+                  Join thousands of SMEs who have already benefited from our
                   comprehensive support services.
-                </p>
+                </p> */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button
                     size="lg"
                     variant="secondary"
                     onClick={() => scrollToSection("#contact")}
-                    className="bg-white text-teal-600 hover:bg-slate-50 transform hover:scale-105 transition-all duration-300"
+                    className="bg-white text-xs md:text-sm text-teal-600 hover:bg-slate-50 transform hover:scale-105 transition-all duration-300"
                   >
                     Get Started Today
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -608,7 +607,8 @@ const handleSubmit = async (e: React.FormEvent) => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white/30 text-white hover:bg-white/10 bg-transparent transform hover:scale-105 transition-all duration-300"
+                    className="border-white/30 text-xs md:text-sm text-white hover:bg-white/10 bg-transparent transform hover:scale-105 transition-all duration-300"
+                    onClick={() => window.open('/brochure.pdf')}
                   >
                     Download Brochure
                   </Button>
@@ -633,13 +633,12 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
                 Our Strategic Goals
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                Comprehensive support system designed to elevate MSMEs across
-                all dimensions of business growth
+              <p className="text-sm md:text-xl text-slate-600 max-w-3xl mx-auto">
+                Comprehensive solutions designed to support small and medium enterprises at every stage of their growth journey.
               </p>
             </div>
           </div>
@@ -669,12 +668,12 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </div>
 
                   <CardHeader className="pb-4 relative z-10">
-                    <CardTitle className="text-xl font-semibold text-slate-800 group-hover:text-teal-600 transition-colors duration-300">
+                    <CardTitle className="text-lg md:text-xl font-semibold text-slate-800 group-hover:text-teal-600 transition-colors duration-300">
                       {goal.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="relative z-10">
-                    <CardDescription className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                    <CardDescription className="text-slate-600 text-xs md:text-sm leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
                       {goal.description}
                     </CardDescription>
                   </CardContent>
@@ -699,14 +698,13 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
                 Get In Touch
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-orange-400 mx-auto mb-6 animate-pulse"></div>
-              <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-                Ready to join our mission of empowering MSMEs? Connect with us
-                today.
-              </p>
+              {/* <p className="text-sm md:text-xl text-slate-300 max-w-3xl mx-auto">
+                Connect with us today.
+              </p> */}
             </div>
           </div>
 
@@ -718,7 +716,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   icon: MapPin,
                   title: "Address",
                   content: (
-                    <p className="text-slate-300 leading-relaxed">
+                    <p className="text-slate-300 leading-relaxed text-xs md:text-sm">
                       Plot No. 33, Sumer Nagar, Mansarovar
                       <br />
                       Jaipur - 302020, Rajasthan
@@ -729,7 +727,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   icon: Phone,
                   title: "Phone",
                   content: (
-                    <div className="space-y-1">
+                    <div className="space-y-1 text-xs md:text-sm">
                       <p className="text-slate-300">+91 9887995799</p>
                       <p className="text-slate-300">+91 9887098722</p>
                     </div>
@@ -741,7 +739,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   content: (
                     <Button
                       variant="link"
-                      className="text-teal-400 hover:text-teal-300 p-0 h-auto font-normal transform hover:scale-105 transition-all duration-300"
+                      className="text-teal-400 text-xs md:text-sm hover:text-teal-300 p-0 h-auto font-normal transform hover:scale-105 transition-all duration-300"
                       onClick={() =>
                         (window.location.href = "mailto:inforajsme@gmail.com")
                       }
@@ -764,7 +762,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                           <item.icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-teal-300 transition-colors duration-300">
+                          <h3 className="text-sm md:text-lg font-semibold text-white mb-2 group-hover:text-teal-300 transition-colors duration-300">
                             {item.title}
                           </h3>
                           {item.content}
@@ -780,10 +778,10 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-400">
               <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-500">
                 <CardHeader>
-                  <CardTitle className="text-white text-2xl">
+                  <CardTitle className="text-white text:sm md:text-2xl">
                     Send us a Message
                   </CardTitle>
-                  <CardDescription className="text-slate-300">
+                  <CardDescription className="text-slate-300 text-xs md:text-sm">
                     Fill out the form below and we'll get back to you as soon as
                     possible.
                   </CardDescription>
@@ -794,7 +792,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <div className="space-y-2">
                         <label
                           htmlFor="name"
-                          className="text-sm font-medium text-white"
+                          className="text-xs md:text-sm font-medium text-white"
                         >
                           Full Name *
                         </label>
@@ -805,14 +803,14 @@ const handleSubmit = async (e: React.FormEvent) => {
                           required
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-teal-400 focus:ring-teal-400 transition-all duration-300"
+                          className="bg-white/10 text-sm border-white/20 text-white placeholder:text-slate-400 focus:border-teal-400 focus:ring-teal-400 transition-all duration-300"
                           placeholder="Enter your full name"
                         />
                       </div>
                       <div className="space-y-2">
                         <label
                           htmlFor="email"
-                          className="text-sm font-medium text-white"
+                          className="text-xs md:text-sm font-medium text-white"
                         >
                           Email Address *
                         </label>
@@ -823,7 +821,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-teal-400 focus:ring-teal-400 transition-all duration-300"
+                          className="bg-white/10 text-sm border-white/20 text-white placeholder:text-slate-400 focus:border-teal-400 focus:ring-teal-400 transition-all duration-300"
                           placeholder="Enter your email"
                         />
                       </div>
@@ -832,7 +830,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <div className="space-y-2">
                       <label
                         htmlFor="subject"
-                        className="text-sm font-medium text-white"
+                        className="text-xs md:text-sm font-medium text-white"
                       >
                         Subject *
                       </label>
@@ -843,7 +841,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         required
                         value={formData.subject}
                         onChange={handleInputChange}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-teal-400 focus:ring-teal-400 transition-all duration-300"
+                        className="bg-white/10 text-sm border-white/20 text-white placeholder:text-slate-400 focus:border-teal-400 focus:ring-teal-400 transition-all duration-300"
                         placeholder="What is this regarding?"
                       />
                     </div>
@@ -851,7 +849,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <div className="space-y-2">
                       <label
                         htmlFor="message"
-                        className="text-sm font-medium text-white"
+                        className="text-xs md:text-sm font-medium text-white"
                       >
                         Message *
                       </label>
@@ -862,7 +860,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         rows={5}
                         value={formData.message}
                         onChange={handleInputChange}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-teal-400 focus:ring-teal-400 transition-all duration-300 resize-none"
+                        className="bg-white/10 text-sm border-white/20 text-white placeholder:text-slate-400 focus:border-teal-400 focus:ring-teal-400 transition-all duration-300 resize-none"
                         placeholder="Tell us about your inquiry or how we can help you..."
                       />
                     </div>
@@ -911,7 +909,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           </div>
 
           {/* Quick Contact Button */}
-          <div className="mt-12 text-center animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-600">
+          {/* <div className="mt-12 text-center animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-600">
             <p className="text-slate-300 mb-4">Prefer to email us directly?</p>
             <Button
               size="lg"
@@ -925,7 +923,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               <Mail className="w-5 h-5 mr-2" />
               inforajsme@gmail.com
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -937,7 +935,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               <img
                 src="/logoMe.png"
                 alt="RAJSME Logo"
-                className="h-8 w-auto"
+                className="h-auto w-auto"
               />
             </div>
             <span className="text-white font-semibold hover:text-teal-300 transition-colors duration-300">
