@@ -402,7 +402,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
+              <h2 className="text-2xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
                 About RAJSME
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
@@ -465,7 +465,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
                 Our Vision
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-orange-400 mx-auto mb-6 animate-pulse"></div>
@@ -523,7 +523,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
+              <h2 className="text-2xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
                 Our Services
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
@@ -633,7 +633,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
+              <h2 className="text-2xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
                 Our Strategic Goals
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
@@ -698,7 +698,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
                 Get In Touch
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-orange-400 mx-auto mb-6 animate-pulse"></div>
