@@ -83,7 +83,7 @@ export default function HomePage() {
       title: "Facilitate Market Linkages",
       description:
         "Enable SMEs to access local and global markets via fairs, B2B/B2C shows, e-commerce, and export facilitation.",
-      image: "/msme-support.jpg",
+      image: "/marketing.jpg",
     },
     {
       icon: Users,
@@ -94,10 +94,10 @@ export default function HomePage() {
     },
     {
       icon: Shield,
-      title: "Advocate for MSME Interests",
+      title: "Advocate for SME Interests",
       description:
         "Represent the sector's voice in policy dialogues for favorable reforms, schemes, and institutional support.",
-      image: "/innovation.jpg",
+      image: "sme.jpg",
     },
   ];
 
@@ -106,7 +106,7 @@ export default function HomePage() {
       icon: Building2,
       title: "Business Registration & Compliance",
       description:
-        "Complete assistance with MSME registration, UDYAM certification, GST registration, and ongoing compliance support.",
+        "Complete assistance with SME registration, UDYAM certification, GST registration, and ongoing compliance support.",
       features: [
         "UDYAM Registration",
         "GST Compliance",
@@ -610,7 +610,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     className="border-white/30 text-xs md:text-sm text-white hover:bg-white/10 bg-transparent transform hover:scale-105 transition-all duration-300"
                     onClick={() => window.open('/brochure.pdf')}
                   >
-                    Download Brochure
+                    Registration Form
                   </Button>
                 </div>
               </CardContent>
