@@ -440,7 +440,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div className="animate-in fade-in-50 slide-in-from-right-4 duration-700 delay-400">
               <div className="relative">
                 <img
-                  src="/msme-support.jpg"
+                  src="/rajsme.png"
                   alt="MSME Support"
                   className="rounded-2xl shadow-2xl w-full h-96 object-cover transform hover:scale-105 transition-transform duration-500"
                 />
