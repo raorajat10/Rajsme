@@ -608,9 +608,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                     size="lg"
                     variant="outline"
                     className="border-white/30 text-xs md:text-sm text-white hover:bg-white/10 bg-transparent transform hover:scale-105 transition-all duration-300"
-                    onClick={() => window.open('/brochure.pdf')}
+                    onClick={() => window.open('./RAJSME_Membership_Application_Form.pdf')}
                   >
-                    Registration Form
+                    Get Membership
                   </Button>
                 </div>
               </CardContent>
