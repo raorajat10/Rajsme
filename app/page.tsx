@@ -717,9 +717,17 @@ const handleSubmit = async (e: React.FormEvent) => {
                   title: "Address",
                   content: (
                     <p className="text-slate-300 leading-relaxed text-xs md:text-sm">
-                      Plot No. 33, Sumer Nagar, Mansarovar
+                      <strong>Registered Office</strong> (North India): 33, Sumer Nagar Ext., F Block, V.T. Road, Mansarovar
                       <br />
                       Jaipur - 302020, Rajasthan
+                      <br />
+                      <strong>Business Address</strong> (North India): 10/48, Janki Marg, Chitrakoot Scheme, Vaishali Nagar
+                      <br />
+                      Jaipur – 302021, Rajasthan
+                      <br />
+                      <strong>Regional Office</strong> (South India): 408, 4th Floor, V.V. Vintage Boulevard, Raj Bhavan Road
+                      <br />
+                      Somajiguda, Hyderabad – 500082
                     </p>
                   ),
                 },
