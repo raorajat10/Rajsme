@@ -248,7 +248,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div>
               <div className="transform hover:scale-110 transition-transform duration-300">
                 <img
-                  src="/logoo.png"
+                  src="/logoraj.png"
                   alt="RAJSME Logo"
                   className="h-20 w-auto"
                 />
@@ -941,7 +941,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <div className="flex items-center justify-center space-x-4 mb-4">
             <div className="transform hover:scale-110 transition-transform duration-300">
               <img
-                src="/logoo.png"
+                src="/logoraj.png"
                 alt="RAJSME Logo"
                 className="h-20 w-auto"
               />
