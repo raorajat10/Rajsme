@@ -11,7 +11,7 @@ export default function PaymentQR() {
       {/* Floating Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="bg-red-600 hover:bg-red-700 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-xl"
+        className="w-20 h-20 bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl rounded-full text-white text-3xl font-bold flex items-center justify-center"
       >
         ₹
       </button>
