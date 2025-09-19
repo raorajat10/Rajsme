@@ -35,6 +35,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle, AlertCircle } from "lucide-react";
+import MembershipForm from "@/components/formmembership";
 
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -617,6 +618,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             </Card>
           </div>
         </div>
+        <MembershipForm />
       </section>
 
       {/* Goals Section */}
