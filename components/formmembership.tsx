@@ -72,7 +72,7 @@ export default function MembershipForm() {
                       <option>Others</option>
                     </select>
                     <input name="establishmentDate" type="date" required className="border p-2 rounded w-full" />
-                    <input name="msmeNumber" placeholder="MSME Registration Number" className="border p-2 rounded w-full" />
+                    
                     <input name="udyamNumber" placeholder="UDYAM Registration No." className="border p-2 rounded w-full" />
                     <input name="panNumber" placeholder="PAN Number" required className="border p-2 rounded w-full" />
                     <input name="gstNumber" placeholder="GST Number" className="border p-2 rounded w-full" />

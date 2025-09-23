@@ -249,7 +249,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div>
               <div className="transform hover:scale-110 transition-transform duration-300">
                 <img
-                  src="/logoraj.png"
+                  src="/rajsmee-me.png"
                   alt="RAJSME Logo"
                   className="h-20 w-auto"
                 />
@@ -430,8 +430,8 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <Shield className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-xs md:text-lg">Trusted by 1000+ SMEs</p>
-                      <p className="text-xs md:text-lg text-slate-600">Across India</p>
+                      <p className="font-semibold text-xs md:text-lg">Trusted Empowering Indian SMEs on the</p>
+                      <p className="text-xs md:text-lg text-slate-600">Global Stage</p>
                     </div>
                   </div>
                 </CardContent>
@@ -943,7 +943,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <div className="flex items-center justify-center space-x-4 mb-4">
             <div className="transform hover:scale-110 transition-transform duration-300">
               <img
-                src="/logoraj.png"
+                src="/rajsmee-me.png"
                 alt="RAJSME Logo"
                 className="h-20 w-auto"
               />
