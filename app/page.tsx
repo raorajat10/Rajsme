@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import emailjs from '@emailjs/browser'
+import emailjs from "@emailjs/browser";
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -36,7 +36,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle, AlertCircle } from "lucide-react";
 import MembershipForm from "@/components/formmembership";
-
+import Slider from "react-slick";
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -91,7 +91,7 @@ export default function HomePage() {
       title: "Strengthen Entrepreneurial Ecosystems",
       description:
         "Nurture youth, women, and first-generation entrepreneurs with mentorship, training, and incubation support.",
-      image: "/about-bg.jpg",
+      image: "/raj.jpg",
     },
     {
       icon: Shield,
@@ -181,6 +181,20 @@ export default function HomePage() {
       ],
       color: "from-indigo-500 to-purple-500",
     },
+       {
+      icon: Shield,
+      title: "Intellectual Property Support (IPS)",
+      description:
+        "RAJSME helps MSMEs protect and grow their innovations through IP support and financial assistance.",
+      features: [
+        "Patent Registration",
+        "Geographical Indication (GI) Registration",
+        "Design Registration",
+        "Trademark Registration",
+        "Copyright & IP Advisory Services",
+      ],
+      color: "from-indigo-500 to-purple-500",
+    },
   ];
 
   const scrollToSection = (href: string) => {
@@ -201,39 +215,57 @@ export default function HomePage() {
     }));
   };
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault()
-  setIsSubmitting(true)
-  setSubmitStatus('idle')
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-  try {
-    await emailjs.send(
-      'service_p29ko3y',
-      'template_510pv3o',
+    try {
+      await emailjs.send(
+        "service_p29ko3y",
+        "template_510pv3o",
+        {
+          // Match template variables exactly
+          name: formData.name, // Changed from 'from_name' to 'name'
+          email: formData.email, // Changed from 'from_email' to 'email'
+          subject: formData.subject, // Re-added, assuming you fix template subject
+          message: formData.message,
+          time: new Date().toLocaleString(), // Added for the {{time}} placeholder
+        },
+        "xXItTksjd7stHKVl7"
+      );
+
+      setSubmitStatus("success");
+      // Reset formData including subject
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error); // This will now show more details on the 400 error
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      // Optional: Auto-clear status message after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    }
+  };
+ const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
       {
-        // Match template variables exactly
-        name: formData.name,       // Changed from 'from_name' to 'name'
-        email: formData.email,     // Changed from 'from_email' to 'email'
-        subject: formData.subject, // Re-added, assuming you fix template subject
-        message: formData.message,
-        time: new Date().toLocaleString(), // Added for the {{time}} placeholder
+        breakpoint: 1024,
+        settings: { slidesToShow: 2 },
       },
-      'xXItTksjd7stHKVl7'
-    )
-
-    setSubmitStatus('success')
-    // Reset formData including subject
-    setFormData({ name: '', email: '', subject: '', message: '' })
-  } catch (error) {
-    console.error('EmailJS Error:', error); // This will now show more details on the 400 error
-    setSubmitStatus('error')
-  } finally {
-    setIsSubmitting(false)
-    // Optional: Auto-clear status message after 5 seconds
-    setTimeout(() => setSubmitStatus('idle'), 5000);
-  }
-}
-
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 1 },
+      },
+    ],
+  };
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -258,24 +290,30 @@ const handleSubmit = async (e: React.FormEvent) => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex flex-grow items-center  space-x-6">
-              <div className="hidden md:flex flex-grow items-center  space-x-6 justify-center"> {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-slate-700 hover:text-teal-600 font-medium transition-all duration-300 hover:scale-105 relative group"
+              <div className="hidden md:flex flex-grow items-center  space-x-6 justify-center">
+                {" "}
+                {navItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    className="text-slate-700 hover:text-teal-600 font-medium transition-all duration-300 hover:scale-105 relative group"
+                  >
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="">
+                {" "}
+                <Button
+                  onClick={() => scrollToSection("#contact")}
+                  className="bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-                </button>
-              ))}</div>
-             
-             <div className=""> <Button
-                onClick={() => scrollToSection("#contact")}
-                className="bg-gradient-to-r from-teal-500 to-orange-500 hover:from-teal-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <Mail className="w-4 h-4 mr-2" />
-                Get In Touch
-              </Button></div>
+                  <Mail className="w-4 h-4 mr-2" />
+                  Get In Touch
+                </Button>
+              </div>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -415,23 +453,37 @@ const handleSubmit = async (e: React.FormEvent) => {
               <Card className="border-0 shadow-2xl bg-white/80 backdrop-blur-md hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2">
                 <CardContent className="p-8">
                   <p className="text-xs md:text-lg text-slate-700 leading-relaxed mb-6">
-                    RAJSME Enterprises Association is a Section 8 company
-                    incorporated under the Companies Act, 2013, dedicated to
-                    empowering India's  Small & Medium Enterprises (SMEs)
-                    and cottage industries.
+                    RAJSME Enterprises Association is a leading business
+                    development organization committed to promoting and
+                    empowering Indian SMEs, entrepreneurs, and artisans across
+                    global markets. RAJSME serves as a strategic bridge between
+                    Indian enterprises and international opportunities, enabling
+                    small and medium businesses to expand their global presence,
+                    enhance competitiveness, and build sustainable partnerships
+                    worldwide.
                   </p>
                   <p className="text-xs md:text-lg text-slate-700 leading-relaxed mb-6">
-                    We serve as a bridge between traditional businesses and
-                    modern market opportunities, providing comprehensive support
-                    for sustainable growth and global competitiveness.
+                    With the trust of over 500 enterprises and artisan groups
+                    across India, RAJSME has emerged as a dynamic platform for
+                    trade promotion, knowledge exchange, and enterprise
+                    development. Our mission is to transform India’s MSME sector
+                    into a globally recognized powerhouse of innovation,
+                    craftsmanship, and sustainability — empowering Indian
+                    enterprises to achieve global competitiveness and
+                    sustainable growth through strategic guidance, market
+                    access, capacity building, and international collaboration.
                   </p>
                   <div className="flex items-center space-x-4 text-teal-600">
                     <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-orange-500 rounded-full flex items-center justify-center">
                       <Shield className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-xs md:text-lg">Trusted Empowering Indian SMEs on the</p>
-                      <p className="text-xs md:text-lg text-slate-600">Global Stage</p>
+                      <p className="font-semibold text-xs md:text-lg">
+                        Trusted Empowering Indian SMEs on the
+                      </p>
+                      <p className="text-xs md:text-lg text-slate-600">
+                        Global Stage
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -441,9 +493,9 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div className="animate-in fade-in-50 slide-in-from-right-4 duration-700 delay-400">
               <div className="relative">
                 <img
-                  src="/rajsme.png"
+                  src="/about.jpg"
                   alt="MSME Support"
-                  className="rounded-2xl shadow-2xl w-full h-96 object-cover transform hover:scale-105 transition-transform duration-500"
+                  className="rounded-2xl shadow-2xl w-full h-90 object-cover transform hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent rounded-2xl"></div>
               </div>
@@ -457,7 +509,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         id="vision"
         className="relative py-20 px-4 overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/vision-bg.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/raj.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -486,7 +538,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <div className="w-16 h-16 bg-gradient-to-r from-teal-400 to-orange-400 rounded-full flex items-center justify-center mb-2 mx-auto">
                         <Globe className="w-8 h-8 text-white" />
                       </div>
-                      <p className="text-white/80 text-xs  md:text-sm">Global Reach</p>
+                      <p className="text-white/80 text-xs  md:text-sm">
+                        Global Reach
+                      </p>
                     </div>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-gradient-to-r from-teal-400 to-orange-400 rounded-full flex items-center justify-center mb-2 mx-auto">
@@ -500,7 +554,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <div className="w-16 h-16 bg-gradient-to-r from-teal-400 to-orange-400 rounded-full flex items-center justify-center mb-2 mx-auto">
                         <Users className="w-8 h-8 text-white" />
                       </div>
-                      <p className="text-white/80 text-xs  md:text-sm">Community Support</p>
+                      <p className="text-white/80 text-xs  md:text-sm">
+                        Community Support
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -511,37 +567,34 @@ const handleSubmit = async (e: React.FormEvent) => {
       </section>
 
       {/* Services Section */}
-      <section
-        id="services"
-        className="relative py-20 px-4 overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)), url('/goals-bg.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-              <h2 className="text-2xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
-                Our Services
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
-              <p className=" text-sm md:text-xl text-slate-600 max-w-3xl mx-auto">
-                Comprehensive solutions designed to support Small & Medium Enterprises at every stage of their growth journey.
-              </p>
-            </div>
-          </div>
+       <section
+      id="services"
+      className="relative py-20 px-4 overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)), url('/goals-bg.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <div className="container mx-auto">
+        {/* Title */}
+        <div className="text-center mb-16 animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
+          <h2 className="text-2xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
+            Our Services
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
+          <p className="text-sm md:text-xl text-slate-600 max-w-3xl mx-auto">
+            Comprehensive solutions designed to support Small & Medium Enterprises at every stage of their growth journey.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {/* Slider */}
+        <div className="max-w-7xl mx-auto">
+          <Slider {...settings}>
             {services.map((service, index) => (
-              <div
-                key={index}
-                className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:scale-105 hover:-translate-y-4 cursor-pointer overflow-hidden relative h-full">
+              <div key={index} className="px-4">
+                <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:scale-105 hover:-translate-y-2 cursor-pointer overflow-hidden relative h-full">
                   <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   <CardHeader className="pb-4 relative z-10">
@@ -561,65 +614,54 @@ const handleSubmit = async (e: React.FormEvent) => {
                     </CardDescription>
 
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-slate-700 text-sm">
-                        Key Features:
-                      </h4>
+                      <h4 className="font-semibold text-slate-700 text-sm">Key Features:</h4>
                       <ul className="space-y-1">
-                        {service.features.map((feature, featureIndex) => (
-                          <li
-                            key={featureIndex}
-                            className="flex items-center text-xs md:text-sm text-slate-600"
-                          >
+                        {service.features.map((feature: string, i: number) => (
+                          <li key={i} className="flex items-center text-xs md:text-sm text-slate-600">
                             <CheckCircle className="w-4 h-4 text-teal-500 mr-2 flex-shrink-0" />
                             {feature}
                           </li>
                         ))}
                       </ul>
                     </div>
-
-                 
                   </CardContent>
                 </Card>
               </div>
             ))}
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-16 animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-800">
-            <Card className="max-w-4xl mx-auto border-0 shadow-xl bg-gradient-to-r from-teal-500 to-orange-500 text-white">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">
-                  Join Us to Transform Your Business
-                </h3>
-                {/* <p className="text-sm md:text-lg mb-6 text-white/90">
-                  Join thousands of SMEs who have already benefited from our
-                  comprehensive support services.
-                </p> */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    size="lg"
-                    variant="secondary"
-                    onClick={() => scrollToSection("#contact")}
-                    className="bg-white text-xs md:text-sm text-teal-600 hover:bg-slate-50 transform hover:scale-105 transition-all duration-300"
-                  >
-                    Get Started Today
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white/30 text-xs md:text-sm text-white hover:bg-white/10 bg-transparent transform hover:scale-105 transition-all duration-300"
-                    onClick={() => window.open('./RAJSME_Membership_Application_Form.pdf')}
-                  >
-                    Get Membership
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          </Slider>
         </div>
-        <MembershipForm />
-      </section>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16 animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-800">
+          <Card className="max-w-4xl mx-auto border-0 shadow-xl bg-gradient-to-r from-teal-500 to-orange-500 text-white">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold mb-4">Join Us to Transform Your Business</h3>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  onClick={() => scrollToSection("#contact")}
+                  className="bg-white text-xs md:text-sm text-teal-600 hover:bg-slate-50 transform hover:scale-105 transition-all duration-300"
+                >
+                  Get Started Today
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/30 text-xs md:text-sm text-white hover:bg-white/10 bg-transparent transform hover:scale-105 transition-all duration-300"
+                  onClick={() => window.open("./RAJSME_Membership_Application_Form.pdf")}
+                >
+                  Get Membership
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <MembershipForm />
+    </section>
 
       {/* Goals Section */}
       <section
@@ -640,7 +682,8 @@ const handleSubmit = async (e: React.FormEvent) => {
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
               <p className="text-sm md:text-xl text-slate-600 max-w-3xl mx-auto">
-                Comprehensive solutions designed to support small and medium enterprises at every stage of their growth journey.
+                Comprehensive solutions designed to support small and medium
+                enterprises at every stage of their growth journey.
               </p>
             </div>
           </div>
@@ -719,15 +762,18 @@ const handleSubmit = async (e: React.FormEvent) => {
                   title: "Address",
                   content: (
                     <p className="text-slate-300 leading-relaxed text-xs md:text-sm">
-                      <strong>Registered Office</strong> (North India): 33, Sumer Nagar Ext., F Block, V.T. Road, Mansarovar
+                      <strong>Registered Office</strong> (North India): 33,
+                      Sumer Nagar Ext., F Block, V.T. Road, Mansarovar
                       <br />
                       Jaipur - 302020, Rajasthan
                       <br />
-                      <strong>Business Address</strong> (North India): 10/48, Janki Marg, Chitrakoot Scheme, Vaishali Nagar
+                      <strong>Business Address</strong> (North India): 10/48,
+                      Janki Marg, Chitrakoot Scheme, Vaishali Nagar
                       <br />
                       Jaipur – 302021, Rajasthan
                       <br />
-                      <strong>Regional Office</strong> (South India): 408, 4th Floor, V.V. Vintage Boulevard, Raj Bhavan Road
+                      <strong>Regional Office</strong> (South India): 408, 4th
+                      Floor, V.V. Vintage Boulevard, Raj Bhavan Road
                       <br />
                       Somajiguda, Hyderabad – 500082
                     </p>
