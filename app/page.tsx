@@ -354,12 +354,9 @@ export default function HomePage() {
       {/* Hero Section */}
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/bac.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-teal-900/20 to-orange-900/20"></div>
@@ -506,12 +503,10 @@ export default function HomePage() {
       {/* Vision Section */}
       <section
         id="vision"
-        className="relative py-20 px-4 overflow-hidden"
+        className="relative py-20 px-4 overflow-hidden bg-center bg-cover md:bg-fixed"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/map.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+        
         }}
       >
         <div className="container mx-auto">
