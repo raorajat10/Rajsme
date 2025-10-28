@@ -508,7 +508,7 @@ export default function HomePage() {
         id="vision"
         className="relative py-20 px-4 overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/raj.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/map.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -799,7 +799,7 @@ export default function HomePage() {
                   content: (
                     <div className="space-y-1 text-xs md:text-sm">
                       <p className="text-slate-300">+91 9887995799</p>
-                      <p className="text-slate-300">+91 9887098722</p>
+                      <p className="text-slate-300">+91 9887098122</p>
                     </div>
                   ),
                 },
