@@ -36,7 +36,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle, AlertCircle } from "lucide-react";
 import MembershipForm from "@/components/formmembership";
-import Slider from "react-slick";
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -357,7 +356,7 @@ export default function HomePage() {
         id="home"
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/hero-bg.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/bac.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -567,34 +566,38 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-       <section
-      id="services"
-      className="relative py-20 px-4 overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)), url('/goals-bg.jpg')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      <div className="container mx-auto">
-        {/* Title */}
-        <div className="text-center mb-16 animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
-          <h2 className="text-2xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
-            Our Services
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
-          <p className="text-sm md:text-xl text-slate-600 max-w-3xl mx-auto">
-            Comprehensive solutions designed to support Small & Medium Enterprises at every stage of their growth journey.
-          </p>
-        </div>
+      <section
+        id="services"
+        className="relative py-20 px-4 overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)), url('/goals-bg.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700">
+              <h2 className="text-2xl md:text-5xl font-bold text-slate-800 mb-4 drop-shadow-sm">
+                Our Services
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-orange-500 mx-auto mb-6 animate-pulse"></div>
+              <p className=" text-sm md:text-xl text-slate-600 max-w-3xl mx-auto">
+                Comprehensive solutions designed to support Small & Medium
+                Enterprises at every stage of their growth journey.
+              </p>
+            </div>
+          </div>
 
-        {/* Slider */}
-        <div className="max-w-7xl mx-auto">
-          <Slider {...settings}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
-              <div key={index} className="px-4">
-                <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:scale-105 hover:-translate-y-2 cursor-pointer overflow-hidden relative h-full">
+              <div
+                key={index}
+                className="animate-in fade-in-50 slide-in-from-bottom-4 duration-700"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm hover:scale-105 hover:-translate-y-4 cursor-pointer overflow-hidden relative h-full">
                   <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   <CardHeader className="pb-4 relative z-10">
@@ -614,10 +617,15 @@ export default function HomePage() {
                     </CardDescription>
 
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-slate-700 text-sm">Key Features:</h4>
+                      <h4 className="font-semibold text-slate-700 text-sm">
+                        Key Features:
+                      </h4>
                       <ul className="space-y-1">
-                        {service.features.map((feature: string, i: number) => (
-                          <li key={i} className="flex items-center text-xs md:text-sm text-slate-600">
+                        {service.features.map((feature, featureIndex) => (
+                          <li
+                            key={featureIndex}
+                            className="flex items-center text-xs md:text-sm text-slate-600"
+                          >
                             <CheckCircle className="w-4 h-4 text-teal-500 mr-2 flex-shrink-0" />
                             {feature}
                           </li>
@@ -628,40 +636,46 @@ export default function HomePage() {
                 </Card>
               </div>
             ))}
-          </Slider>
-        </div>
+          </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16 animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-800">
-          <Card className="max-w-4xl mx-auto border-0 shadow-xl bg-gradient-to-r from-teal-500 to-orange-500 text-white">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Join Us to Transform Your Business</h3>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  onClick={() => scrollToSection("#contact")}
-                  className="bg-white text-xs md:text-sm text-teal-600 hover:bg-slate-50 transform hover:scale-105 transition-all duration-300"
-                >
-                  Get Started Today
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white/30 text-xs md:text-sm text-white hover:bg-white/10 bg-transparent transform hover:scale-105 transition-all duration-300"
-                  onClick={() => window.open("./RAJSME_Membership_Application_Form.pdf")}
-                >
-                  Get Membership
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Call to Action */}
+          <div className="text-center mt-16 animate-in fade-in-50 slide-in-from-bottom-4 duration-700 delay-800">
+            <Card className="max-w-4xl mx-auto border-0 shadow-xl bg-gradient-to-r from-teal-500 to-orange-500 text-white">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4">
+                  Join Us to Transform Your Business
+                </h3>
+                {/* <p className="text-sm md:text-lg mb-6 text-white/90">
+                  Join thousands of SMEs who have already benefited from our
+                  comprehensive support services.
+                </p> */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    onClick={() => scrollToSection("#contact")}
+                    className="bg-white text-xs md:text-sm text-teal-600 hover:bg-slate-50 transform hover:scale-105 transition-all duration-300"
+                  >
+                    Get Started Today
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-white/30 text-xs md:text-sm text-white hover:bg-white/10 bg-transparent transform hover:scale-105 transition-all duration-300"
+                    onClick={() =>
+                      window.open("./RAJSME_Membership_Application_Form.pdf")
+                    }
+                  >
+                    Get Membership
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
-      </div>
-
-      <MembershipForm />
-    </section>
+        <MembershipForm />
+      </section>
 
       {/* Goals Section */}
       <section
